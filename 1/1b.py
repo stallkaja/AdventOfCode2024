@@ -19,8 +19,17 @@ def main():
     left.sort()
     right.sort()
 
-    for i in range(0, len(left)):
-        total += abs(left[i]-right[i])
+
+
+    for i in range(0,len(left)):
+        cnt = 0;
+        for j in right:
+            if left[i] == j:
+                cnt+=1
+        left[i] = left[i] * cnt
+        total = total + left[i]
+    print("Similar left")
+    print(left)
     print(total)
 
 
